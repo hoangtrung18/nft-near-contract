@@ -25,7 +25,7 @@ Please authorize at least one account at the URL above.
 
 Which account did you authorize for use with NEAR CLI?
 Enter it here (if not redirected automatically):
-Logged in as [ vugomarscourse.testnet ] with public key [ ed25519:3smuY1... ] successfully
+Logged in as [ tny.testnet ] with public key [ ed25519:3smuY1... ] successfully
 
 #+end_src
 
@@ -119,18 +119,30 @@ near view nftnear.tny.testnet nft_total_supply
 
 * nft_mint
 #+begin_src
-near call nftnear.tny.testnet nft_mint '{"token_id": "token-03", "receiver_id": "vugomarscourse.testnet", "metadata": {"title": "NFT token 01", "description": "hello there this is nft token 01", "media": "https://bafybeihwe2nq3pimzra4n2oydvwbeubmccbb4g6urwmerwfurelyqt4lvi.ipfs.nftstorage.link"}}' --accountId vugomarscourse.testnet
+near call nftnear.tny.testnet nft_mint '{"token_id": "token-03", "receiver_id": "tny.testnet", "metadata": {"title": "NFT token 01", "description": "hello there this is nft token 01", "media": "https://bafybeigj2b65mucfm6qdqxap5dmeaccrtksdnlbtnjqh4ejdk32hn3bf3i.ipfs.nftstorage.link/"}}' --accountId tny.testnet
 
 #+end_src
 
-: Scheduling a call: nftnear.tny.testnet.nft_mint({"token_id": "token-03", "receiver_id": "vugomarscourse.testnet", "metadata": {"title": "NFT token 01", "description": "hello there this is nft token 01", "media": "https://bafybeihwe2nq3pimzra4n2oydvwbeubmccbb4g6urwmerwfurelyqt4lvi.ipfs.nftstorage.link"}})
+: Scheduling a call: nftnear.tny.testnet.nft_mint({"token_id": "token-03", "receiver_id": "tny.testnet", "metadata": {"title": "NFT token 01", "description": "hello there this is nft token 01", "media": "https://bafybeihwe2nq3pimzra4n2oydvwbeubmccbb4g6urwmerwfurelyqt4lvi.ipfs.nftstorage.link"}})
 : Doing account.functionCall()
 : Receipt: 9qM25U49P1oKpVdXmqkPEfDdEVSRpvZrZPfRnJEsfo6D
-:   Log [nftnear.tny.testnet]: EVENT_LOG:{"standard":"nep171","version":"nft-1.0.0","event":"nft_mint","data":[{"owner_id":"vugomarscourse.testnet","token_ids":["token-03"]}]}
+:   Log [nftnear.tny.testnet]: EVENT_LOG:{"standard":"nep171","version":"nft-1.0.0","event":"nft_mint","data":[{"owner_id":"tny.testnet","token_ids":["token-03"]}]}
 : Transaction Id DF1geUgU8tqovaWyz3xbQCEAEfJsCxqe7iXTbyX7r2yU
 : To see the transaction in the transaction explorer, please open this url in your browser
 : https://explorer.testnet.near.org/transactions/DF1geUgU8tqovaWyz3xbQCEAEfJsCxqe7iXTbyX7r2yU
 : ''
+
+* nft_total_supply
+#+begin_src
+near view nftnear.tny.testnet nft_total_supply
+#+end_src
+
+#+begin_src
+View call: nftnear.tny.testnet.nft_total_supply()
+{
+  1
+}
+#+end_src
 
 * nft_token
 #+begin_src
@@ -141,7 +153,7 @@ near view nftnear.tny.testnet nft_token '{"token_id": "token-01"}'
 View call: nftnear.tny.testnet.nft_token({"token_id": "token-01"})
 {
   token_id: 'token-01',
-  owner_id: 'vugomarscourse.testnet',
+  owner_id: 'tny.testnet',
   metadata: {
     title: 'NFT token 01',
     description: 'hello there this is nft token 01',
@@ -161,7 +173,7 @@ View call: nftnear.tny.testnet.nft_tokens()
 [
   {
     token_id: 'token-01',
-    owner_id: 'vugomarscourse.testnet',
+    owner_id: 'tny.testnet',
     metadata: {
       title: 'NFT token 01',
       description: 'hello there this is nft token 01',
@@ -170,7 +182,7 @@ View call: nftnear.tny.testnet.nft_tokens()
   },
   {
     token_id: 'token-02',
-    owner_id: 'vugomarscourse.testnet',
+    owner_id: 'tny.testnet',
     metadata: {
       title: 'NFT token 01',
       description: 'hello there this is nft token 01',
@@ -179,7 +191,7 @@ View call: nftnear.tny.testnet.nft_tokens()
   },
   {
     token_id: 'token-03',
-    owner_id: 'vugomarscourse.testnet',
+    owner_id: 'tny.testnet',
     metadata: {
       title: 'NFT token 01',
       description: 'hello there this is nft token 01',
@@ -191,15 +203,15 @@ View call: nftnear.tny.testnet.nft_tokens()
 
 * nft_tokens_for_owner
 #+begin_src
-near view nftnear.tny.testnet nft_tokens_for_owner '{"owner_id": "vugomarscourse.testnet"}'
+near view nftnear.tny.testnet nft_tokens_for_owner '{"owner_id": "tny.testnet"}'
 #+end_src
 
 #+begin_src
-View call: nftnear.tny.testnet.nft_tokens_for_owner({"owner_id": "vugomarscourse.testnet"})
+View call: nftnear.tny.testnet.nft_tokens_for_owner({"owner_id": "tny.testnet"})
 [
   {
     token_id: 'token-01',
-    owner_id: 'vugomarscourse.testnet',
+    owner_id: 'tny.testnet',
     metadata: {
       title: 'NFT token 01',
       description: 'hello there this is nft token 01',
@@ -208,7 +220,7 @@ View call: nftnear.tny.testnet.nft_tokens_for_owner({"owner_id": "vugomarscourse
   },
   {
     token_id: 'token-02',
-    owner_id: 'vugomarscourse.testnet',
+    owner_id: 'tny.testnet',
     metadata: {
       title: 'NFT token 01',
       description: 'hello there this is nft token 01',
@@ -217,7 +229,7 @@ View call: nftnear.tny.testnet.nft_tokens_for_owner({"owner_id": "vugomarscourse
   },
   {
     token_id: 'token-03',
-    owner_id: 'vugomarscourse.testnet',
+    owner_id: 'tny.testnet',
     metadata: {
       title: 'NFT token 01',
       description: 'hello there this is nft token 01',
