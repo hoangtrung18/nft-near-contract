@@ -1206,4 +1206,4 @@ function init() {
 }
 
 export { Contract, init, nft_metadata, nft_mint, nft_supply_for_owner, nft_token, nft_tokens, nft_tokens_for_owner, nft_total_supply, nft_transfer, nft_transfer_call };
-//# sourceMappingURL=hello_near.js.map
+//# sourceMappingURL=nft_near.js.map

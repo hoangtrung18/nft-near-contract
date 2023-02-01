@@ -31,12 +31,12 @@ Logged in as [ vugomarscourse.testnet ] with public key [ ed25519:3smuY1... ] su
 
 * create-account sub account
 #+begin_src
-near create-account nftk10.vugomarscourse.testnet --masterAccount vugomarscourse.testnet --initialBalance 20
+near create-account nftnear.tny.testnet --masterAccount tny.testnet --initialBalance 20
 #+end_src
 
 #+RESULTS:
-: Saving key to '/Users/vudangquang/.near-credentials/testnet/nftk10.vugomarscourse.testnet.json'
-: Account nftk10.vugomarscourse.testnet for network "testnet" was created.
+: Saving key to '/Users/vudangquang/.near-credentials/testnet/nftnear.tny.testnet.json'
+: Account nftnear.tny.testnet for network "testnet" was created.
 
 * create-account help
 #+begin_src
@@ -72,61 +72,61 @@ Options:
 
 * build:contract
 #+begin_src
-pnpm run build:contract
+npm run build:contract
 #+end_src
 
 #+begin_src
 Executing wasi-stub...
-node_modules/near-sdk-js/cli/deps/binaryen/wasi-stub/run.sh build/hello_near.wasm >/dev/null
+node_modules/near-sdk-js/cli/deps/binaryen/wasi-stub/run.sh build/nft_near.wasm >/dev/null
 
 #+end_src
 
 * deploy first time
 #+begin_src
-near deploy nftk10.vugomarscourse.testnet --wasmFile contract/build/hello_near.wasm --initFunction init --initArgs '{"owner_id" : "vugomarscourse.testnet"}'
+near deploy nftnear.tny.testnet --wasmFile contract/build/nft_near.wasm --initFunction init --initArgs '{"owner_id" : "tny.testnet"}'
 #+end_src
 
-: Starting deployment. Account id: nftk10.vugomarscourse.testnet, node: https://rpc.testnet.near.org, helper: https://helper.testnet.near.org, file: contract/build/hello_near.wasm
+: Starting deployment. Account id: nftnear.tny.testnet, node: https://rpc.testnet.near.org, helper: https://helper.testnet.near.org, file: contract/build/nft_near.wasm
 : Transaction Id CHLUfHzx79Wd2geG76ffiEnNiHy6cuq8i1GURfX4H7vR
 : To see the transaction in the transaction explorer, please open this url in your browser
  https://explorer.testnet.near.org/transactions/CHLUfHzx79Wd2geG76ffiEnNiHy6cuq8i1GURfX4H7vR
-: Done deploying and initializing nftk10.vugomarscourse.testnet
+: Done deploying and initializing nftnear.tny.testnet
 
 * deploy
 #+begin_src
-near deploy nftk10.vugomarscourse.testnet --wasmFile contract/build/hello_near.wasm
+near deploy nftnear.tny.testnet --wasmFile contract/build/nft_near.wasm
 #+end_src
 
 : This account already has a deployed contract [ EmqF1cd3pgiQYzZYRUrfurhsPeTGzhHTvdk4UdEWhXnV ]. Do you want to proceed? (y/n) y
-: Starting deployment. Account id: nftk10.vugomarscourse.testnet, node: https://rpc.testnet.near.org, helper: https://helper.testnet.near.org, file: contract/build/hello_near.wasm
+: Starting deployment. Account id: nftnear.tny.testnet, node: https://rpc.testnet.near.org, helper: https://helper.testnet.near.org, file: contract/build/nft_near.wasm
 : Transaction Id Fm8baiWRh7kGWhwWAoCx8D5rPDux6KZMx4TB9gFUXidz
 : To see the transaction in the transaction explorer, please open this url in your browser
 : https://explorer.testnet.near.org/transactions/Fm8baiWRh7kGWhwWAoCx8D5rPDux6KZMx4TB9gFUXidz
-: Done deploying to nftk10.vugomarscourse.testnet
+: Done deploying to nftnear.tny.testnet
 
 
 #+begin_src
-near view nftk10.vugomarscourse.testnet nft_metadata
+near view nftnear.tny.testnet nft_metadata
 #+end_src
 
 * nft_total_supply
 #+begin_src
-near view nftk10.vugomarscourse.testnet nft_total_supply
+near view nftnear.tny.testnet nft_total_supply
 #+end_src
 
-: View call: nftk10.vugomarscourse.testnet.nft_total_supply()
+: View call: nftnear.tny.testnet.nft_total_supply()
 : 1
 
 * nft_mint
 #+begin_src
-near call nftk10.vugomarscourse.testnet nft_mint '{"token_id": "token-03", "receiver_id": "vugomarscourse.testnet", "metadata": {"title": "NFT token 01", "description": "hello there this is nft token 01", "media": "https://bafybeihwe2nq3pimzra4n2oydvwbeubmccbb4g6urwmerwfurelyqt4lvi.ipfs.nftstorage.link"}}' --accountId vugomarscourse.testnet
+near call nftnear.tny.testnet nft_mint '{"token_id": "token-03", "receiver_id": "vugomarscourse.testnet", "metadata": {"title": "NFT token 01", "description": "hello there this is nft token 01", "media": "https://bafybeihwe2nq3pimzra4n2oydvwbeubmccbb4g6urwmerwfurelyqt4lvi.ipfs.nftstorage.link"}}' --accountId vugomarscourse.testnet
 
 #+end_src
 
-: Scheduling a call: nftk10.vugomarscourse.testnet.nft_mint({"token_id": "token-03", "receiver_id": "vugomarscourse.testnet", "metadata": {"title": "NFT token 01", "description": "hello there this is nft token 01", "media": "https://bafybeihwe2nq3pimzra4n2oydvwbeubmccbb4g6urwmerwfurelyqt4lvi.ipfs.nftstorage.link"}})
+: Scheduling a call: nftnear.tny.testnet.nft_mint({"token_id": "token-03", "receiver_id": "vugomarscourse.testnet", "metadata": {"title": "NFT token 01", "description": "hello there this is nft token 01", "media": "https://bafybeihwe2nq3pimzra4n2oydvwbeubmccbb4g6urwmerwfurelyqt4lvi.ipfs.nftstorage.link"}})
 : Doing account.functionCall()
 : Receipt: 9qM25U49P1oKpVdXmqkPEfDdEVSRpvZrZPfRnJEsfo6D
-:   Log [nftk10.vugomarscourse.testnet]: EVENT_LOG:{"standard":"nep171","version":"nft-1.0.0","event":"nft_mint","data":[{"owner_id":"vugomarscourse.testnet","token_ids":["token-03"]}]}
+:   Log [nftnear.tny.testnet]: EVENT_LOG:{"standard":"nep171","version":"nft-1.0.0","event":"nft_mint","data":[{"owner_id":"vugomarscourse.testnet","token_ids":["token-03"]}]}
 : Transaction Id DF1geUgU8tqovaWyz3xbQCEAEfJsCxqe7iXTbyX7r2yU
 : To see the transaction in the transaction explorer, please open this url in your browser
 : https://explorer.testnet.near.org/transactions/DF1geUgU8tqovaWyz3xbQCEAEfJsCxqe7iXTbyX7r2yU
@@ -134,11 +134,11 @@ near call nftk10.vugomarscourse.testnet nft_mint '{"token_id": "token-03", "rece
 
 * nft_token
 #+begin_src
-near view nftk10.vugomarscourse.testnet nft_token '{"token_id": "token-01"}'
+near view nftnear.tny.testnet nft_token '{"token_id": "token-01"}'
 #+end_src
 
 #+begin_src
-View call: nftk10.vugomarscourse.testnet.nft_token({"token_id": "token-01"})
+View call: nftnear.tny.testnet.nft_token({"token_id": "token-01"})
 {
   token_id: 'token-01',
   owner_id: 'vugomarscourse.testnet',
@@ -152,12 +152,12 @@ View call: nftk10.vugomarscourse.testnet.nft_token({"token_id": "token-01"})
 
 * nft_tokens
 #+begin_src
-near view nftk10.vugomarscourse.testnet nft_tokens
+near view nftnear.tny.testnet nft_tokens
 #+end_src
 
 
 #+begin_src
-View call: nftk10.vugomarscourse.testnet.nft_tokens()
+View call: nftnear.tny.testnet.nft_tokens()
 [
   {
     token_id: 'token-01',
@@ -191,11 +191,11 @@ View call: nftk10.vugomarscourse.testnet.nft_tokens()
 
 * nft_tokens_for_owner
 #+begin_src
-near view nftk10.vugomarscourse.testnet nft_tokens_for_owner '{"owner_id": "vugomarscourse.testnet"}'
+near view nftnear.tny.testnet nft_tokens_for_owner '{"owner_id": "vugomarscourse.testnet"}'
 #+end_src
 
 #+begin_src
-View call: nftk10.vugomarscourse.testnet.nft_tokens_for_owner({"owner_id": "vugomarscourse.testnet"})
+View call: nftnear.tny.testnet.nft_tokens_for_owner({"owner_id": "vugomarscourse.testnet"})
 [
   {
     token_id: 'token-01',
